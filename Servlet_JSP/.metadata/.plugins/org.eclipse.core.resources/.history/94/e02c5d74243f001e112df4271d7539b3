@@ -1,0 +1,63 @@
+package com.register;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.DriverManager;
+
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
+
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@WebServlet("/register")
+public class Registration extends HttpServlet {
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String name = req.getParameter("fname");
+		String email = req.getParameter("email");
+		String num = req.getParameter("num");
+		String dob = req.getParameter("dob");
+		String city = req.getParameter("city");
+		PrintWriter out = resp.getWriter();
+		try {
+
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3360/register", "root",
+					"kausar86");
+			PreparedStatement pstl = (PreparedStatement) con
+					.prepareStatement("insert into registerForm values(?,?,?,?,?)");
+			pstl.setString(1, name);
+			pstl.setString(2, email);
+			pstl.setString(3, num);
+			pstl.setString(4, dob);
+			pstl.setString(5, city);
+
+			int count = pstl.executeUpdate();
+
+			if (count > 0) {
+				resp.setContentType("text/html");
+				out.println("<h2 style ='color: green'>User Register Succesfully</h2>");
+				RequestDispatcher rd = req.getRequestDispatcher("/registerForm.jsp");
+				rd.include(req, resp);
+			} else {
+				resp.setContentType("text/html");
+				out.println("<h2 style ='color: red'>User not Register Due to some erro </h2>");
+				RequestDispatcher rd = req.getRequestDispatcher("/registerForm.jsp");
+				rd.include(req, resp);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			resp.setContentType("text/html");
+			out.println("<h2 style ='color: red'> Exception Occur "+e.getMessage()+"</h2>");
+			RequestDispatcher rd = req.getRequestDispatcher("/registerForm.jsp");
+			rd.include(req, resp);
+		}
+	}
+
+}

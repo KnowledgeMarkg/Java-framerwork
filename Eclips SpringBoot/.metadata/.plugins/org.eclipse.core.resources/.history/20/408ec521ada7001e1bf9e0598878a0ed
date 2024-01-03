@@ -1,0 +1,5 @@
+package com.code.boot.service;
+
+public class DepartmentServiceImp {
+
+}

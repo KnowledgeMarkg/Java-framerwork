@@ -1,0 +1,7 @@
+package jdbc.utils;
+
+public class QueryUtil {
+   public static String inserEmp() {
+	   return "insert into emp_info (emp_name,emp_address,emp_salary) values(?,?,?)";
+   }
+}

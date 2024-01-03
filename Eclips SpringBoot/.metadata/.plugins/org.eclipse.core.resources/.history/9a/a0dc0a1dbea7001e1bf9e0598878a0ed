@@ -1,0 +1,8 @@
+package com.code.boot.service;
+
+import com.code.boot.entities.Department;
+
+public interface DepartmentService {
+
+	public Department saveDepartment(Department departmemnt);
+}

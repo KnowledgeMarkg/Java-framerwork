@@ -1,0 +1,20 @@
+package com.jdbc.service;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import com.jdbc.employeeModel.Employee;
+
+import jdbc.utils.DBConnection;
+
+public class DBService {
+  public void inserEmp(Employee emp) {
+	  try {
+		DBConnection connection = new DBConnection();
+		Connection con= connection.getConnection();
+		PreparedStatement ps = con.prepareStatement(null);
+	} catch (Exception e) {
+		// TODO: handle exception
+	}
+  }
+}

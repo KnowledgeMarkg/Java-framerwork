@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>
+		Use Is <span th:style="${isActive} ? 'color:green' : 'color:red'"
+			th:text="${isActive} ? 'Active' : 'Not Active'"></span>
+	</h1>
+
+	<h1 th:if="${gender}=='f'">Female</h1>
+	<h1 th:if="${gender}=='m'">Male</h1>
+	<div th:switch="${#lists.size(num)}">
+		<h2 th:case="'0'">List Containing 0 Element</h2>
+		<h2 th:case="'1'">List containing 1 Element</h2>
+		<h2 th:case="*">
+			List Containing More than 1 elements <span
+				th:style="${isActive} ? 'color:green' : 'color:red'"
+				th:text="${isActive} ? 'Active' : 'Not Active'"></span>
+		</h2>
+	</div>
+
+</body>
+</html>

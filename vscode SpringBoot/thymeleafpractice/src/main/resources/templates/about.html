@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}"></title>
+</head>
+<body>
+    <h1>Original String: <span th:text="${name}"></span></h1>
+    
+    <!-- Capitalize the string using #strings utility -->
+    <h1>Capitalized String: <span th:text="${#strings.toUpperCase(title)}"></span></h1>
+    <h1>Capitalized String: <span th:text="${#strings.toUpperCase(name)}"></span></h1>
+</body>
+</html>

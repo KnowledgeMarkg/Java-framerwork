@@ -1,0 +1,9 @@
+package com.jdbc.service;
+
+import com.jdbc.employeeModel.Employee;
+
+public class DBService {
+  public void inserEmp(Employee emp) {
+	  System.out.println("Insert");
+  }
+}

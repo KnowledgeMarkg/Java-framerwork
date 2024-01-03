@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<ul>
+		<li th:each="n , status: ${name}"><span
+			th:style="${status.odd} ? 'font-weight:bold' :'' "
+			th:text="${n}+'   :  ' + ${status.index+1}"></span></li>
+	</ul>
+
+</body>
+</html>

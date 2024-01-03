@@ -1,0 +1,24 @@
+package com.learn.jpa;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import com.learn.jpa.dao.Opration;
+import com.learn.jpa.entities.UserEntities;
+
+@SpringBootApplication
+public class JpaLearnApplication {
+
+	public static void main(String[] args) {
+		ApplicationContext context = SpringApplication.run(JpaLearnApplication.class, args);
+		Opration bean = context.getBean(Opration.class);
+		UserEntities user  = new UserEntities();
+		user.setName("kausar");
+		user.setCity("Bangalore");
+		UserEntities save = bean.save(user);
+		System.out.println(save);
+	}
+
+}

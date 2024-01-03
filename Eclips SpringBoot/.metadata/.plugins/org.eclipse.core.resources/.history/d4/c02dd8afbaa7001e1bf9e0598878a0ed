@@ -1,0 +1,16 @@
+package com.code.boot.service;
+
+import org.springframework.stereotype.Service;
+
+import com.code.boot.entities.Department;
+
+@Service
+public class DepartmentServiceImp implements DepartmentService {
+
+	@Override
+	public Department saveDepartment(Department departmemnt) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

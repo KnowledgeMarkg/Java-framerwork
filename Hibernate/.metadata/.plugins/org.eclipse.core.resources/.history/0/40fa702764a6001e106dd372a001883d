@@ -1,0 +1,5 @@
+package Hibernate1st.LearnHibernate.entity;
+
+public class Student {
+
+}

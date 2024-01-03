@@ -1,0 +1,31 @@
+package com.jdbc.service;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.jdbc.employeeModel.Employee;
+
+import jdbc.utils.DBConnection;
+import jdbc.utils.QueryUtil;
+
+public class DBService {
+	DBConnection connection = new DBConnection();
+
+	public void inserEmp(Employee emp) throws SQLException {
+		try (
+				Connection con = connection.getConnection();
+				PreparedStatement ps = con.prepareStatement(QueryUtil.inserEmp());) {
+			    ps.setString(1, emp.geteName());
+			    ps.setString(2, emp.getEmpAddress());
+			    ps.setDouble(3, emp.getEmpSalary());
+			    
+			    int count = ps.executeUpdate();
+			    if(count>0) {
+			    	System.out.println("Record Insert Successfully");
+			    }else {
+			    	System.out.println("Record Not Insert Some Exception");
+			    }
+		}
+	}
+}

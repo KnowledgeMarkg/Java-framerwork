@@ -1,0 +1,5 @@
+INDEX VERSION 1.134
+C:\Users\faiza\Desktop\SpringBoot Project\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2527514411.index
+\Practice1Boot\src\main\java
+C:\Users\faiza\Desktop\SpringBoot Project\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1400895160.index
+\Practice1Boot\src\main\java

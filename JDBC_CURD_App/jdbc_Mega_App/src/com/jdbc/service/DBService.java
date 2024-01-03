@@ -1,0 +1,97 @@
+package com.jdbc.service;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import com.jdbc.employeeModel.Employee;
+
+import jdbc.utils.DBConnection;
+import jdbc.utils.QueryUtil;
+
+public class DBService {
+	DBConnection connection = new DBConnection();
+
+	public void inserEmp(Employee emp) throws SQLException {
+		try (Connection con = connection.getConnection();
+				PreparedStatement ps = con.prepareStatement(QueryUtil.inserEmp());) {
+			ps.setString(1, emp.geteName());
+			ps.setString(2, emp.getEmpAddress());
+			ps.setDouble(3, emp.getEmpSalary());
+
+			int count = ps.executeUpdate();
+			if (count > 0) {
+				System.out.println("Record Insert Successfully");
+			} else {
+				System.out.println("Record Not Insert Some Exception");
+			}
+		}
+	} // End Of Insert Method...........
+
+	public void selectAllEmp() throws SQLException {
+		try (Connection con = connection.getConnection();
+				Statement smt = con.createStatement();
+				ResultSet rst = smt.executeQuery(QueryUtil.selectAllEmp());) {
+			while (rst.next()) {
+				printAllEmp(new Employee(rst.getInt("id"), rst.getString("emp_name"), rst.getString("emp_address"),
+						rst.getDouble("emp_salary")));
+			}
+		}
+
+	} // End Of SelectAllEMp
+
+	public boolean getAllEmpById(int empId) throws SQLException {
+		boolean isFound = false;
+		try (Connection con = connection.getConnection();
+				Statement smt = con.createStatement();
+				ResultSet rst = smt.executeQuery(QueryUtil.QueryAllEmpById(empId));) {
+			if (rst.next()) {
+				isFound = true;
+				printAllEmp(new Employee(rst.getInt("id"), rst.getString("emp_name"), rst.getString("emp_address"),
+						rst.getDouble("emp_salary")));
+			} else {
+				System.out.println("Record Not found for Id " + empId);
+			}
+		}
+		return isFound;
+	}// End Of GetAllEmpByID
+
+	public void deleteEmpByID(int empId) throws SQLException {
+
+		try (Connection con = connection.getConnection(); Statement smt = con.createStatement();) {
+			int count = smt.executeUpdate(QueryUtil.deleteQuery(empId));
+			if (count > 0) {
+				System.out.println("Delete The Emp Details Successfully");
+			} else {
+				System.out.println("Delete Operation Failed by ID " + empId);
+			}
+		}
+
+	}// End Of DeleteEmpByID
+
+	public void updateEmpById(Employee emp) throws SQLException {
+		try (Connection con = connection.getConnection();
+		    PreparedStatement pst = con.prepareStatement(QueryUtil.updateEmpQuery(emp.getId()));){
+			pst.setString(1, emp.geteName());
+			pst.setString(2, emp.getEmpAddress());
+			pst.setDouble(3, emp.getEmpSalary());
+		    int count = pst.executeUpdate();
+			if (count > 0) {
+				System.out.println("Update The Emp Details Successfully");
+			} else {
+				System.out.println("Update Operation failed By ID " + emp.getId());
+			}
+		}
+	}
+
+	public void printAllEmp(Employee emp) {
+		System.out.println("Employee ID : " + emp.getId());
+		System.out.println("Employee Name : " + emp.geteName());
+		System.out.println("Employee Address : " + emp.getEmpAddress());
+		System.out.println("Employee Salary : " + emp.getEmpSalary());
+
+		System.out.println("==================================================");
+	}
+}

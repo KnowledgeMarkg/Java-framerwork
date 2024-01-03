@@ -1,0 +1,5 @@
+package com.code.boot.repository;
+
+public interface DepartmentRepository {
+
+}

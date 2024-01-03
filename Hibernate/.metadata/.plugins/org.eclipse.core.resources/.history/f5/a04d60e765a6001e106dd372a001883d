@@ -1,0 +1,5 @@
+package Hibernate1st.LearnHibernate;
+
+public class Student {
+
+}

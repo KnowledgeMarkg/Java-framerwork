@@ -1,0 +1,5 @@
+package Hibernate2st.LearnHibernate2.entity;
+
+public class Bike {
+
+}

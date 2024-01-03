@@ -1,0 +1,16 @@
+eclipse.preferences.version=1
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.devtools=5
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.thymeleaf=6
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.web=6
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.artifactId=thymeleafPractice
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.bootVersion=3.2.0
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.description=Thymeleaf project for Spring Boot
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.groupId=com.tymeleaf
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.javaVersion=21
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.language=java
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.name=thymeleafPractice
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.packageName=com.thymeleaf
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.packaging=jar
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.type=MAVEN
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.version=0.0.1-SNAPSHOT
+org.springframework.ide.eclipse.boot.wizard.initializr.url=https\://start.spring.io\n

@@ -1,0 +1,8 @@
+package com.code.boot.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class DepartmentServiceImp implements DepartmentService {
+
+}

@@ -1,0 +1,5 @@
+package jdbc.utils;
+
+public class QueryUtil {
+
+}

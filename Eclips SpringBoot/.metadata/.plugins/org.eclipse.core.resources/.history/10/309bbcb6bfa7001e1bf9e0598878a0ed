@@ -1,0 +1,31 @@
+package com.code.boot.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.code.boot.entities.Department;
+import com.code.boot.repository.DepartmentRepository;
+
+@Service
+public class DepartmentServiceImp implements DepartmentService {
+	@Autowired
+	private DepartmentRepository departmentRepository;
+	@Override
+	public Department saveDepartment(Department departmemnt) {
+		// TODO Auto-generated method stub
+		return departmentRepository.save(departmemnt);
+	}
+	@Override
+	public List<Department> getDepartment() {
+		// TODO Auto-generated method stub
+		return departmentRepository.findAll();
+	}
+	@Override
+	public Department getDepartmentById(Long depId) {
+		// TODO Auto-generated method stub
+		return departmentRepository.getById(depId);
+	}
+
+}

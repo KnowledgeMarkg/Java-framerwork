@@ -1,0 +1,5 @@
+package com.jdbc.employeeModel;
+
+public class Employee {
+
+}

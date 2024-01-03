@@ -1,0 +1,5 @@
+package com.learn.jpa.entities;
+
+public class UserEntities {
+
+}

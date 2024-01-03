@@ -1,0 +1,15 @@
+127.0.0.1 - - [22/Aug/2023:15:14:54 +0530] "GET / HTTP/1.1" 404 752
+127.0.0.1 - - [22/Aug/2023:15:21:53 +0530] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [22/Aug/2023:15:21:54 +0530] "GET /Registration/ HTTP/1.1" 404 769
+127.0.0.1 - - [22/Aug/2023:15:22:39 +0530] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [22/Aug/2023:15:22:44 +0530] "GET /Registration/register.jsp HTTP/1.1" 200 640
+0:0:0:0:0:0:0:1 - - [22/Aug/2023:15:24:07 +0530] "GET /Registration/register.jsp HTTP/1.1" 200 640
+0:0:0:0:0:0:0:1 - - [22/Aug/2023:15:24:15 +0530] "POST /Registration/register HTTP/1.1" 500 178
+127.0.0.1 - - [22/Aug/2023:15:26:53 +0530] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [22/Aug/2023:15:26:55 +0530] "GET /Registration/register.jsp HTTP/1.1" 200 640
+0:0:0:0:0:0:0:1 - - [22/Aug/2023:15:27:06 +0530] "GET /Registration/register.jsp HTTP/1.1" 200 640
+0:0:0:0:0:0:0:1 - - [22/Aug/2023:15:27:20 +0530] "POST /Registration/register HTTP/1.1" 200 740
+127.0.0.1 - - [22/Aug/2023:18:01:39 +0530] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [22/Aug/2023:18:01:40 +0530] "GET /Registration/WEB-INF/classes/com/regist/registerDemo.java HTTP/1.1" 404 683
+127.0.0.1 - - [22/Aug/2023:19:54:09 +0530] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [22/Aug/2023:19:54:09 +0530] "GET /Registration/ HTTP/1.1" 404 769
